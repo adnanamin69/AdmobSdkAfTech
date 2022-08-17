@@ -16,7 +16,7 @@ import com.example.utilities.other_utils.PERMISSION_READ_CALL_LOG
 import com.example.utilities.other_utils.PERMISSION_WRITE_CALL_LOG
 import com.example.utilities.other_utils.extentions.Permissions.getPermissionString
 
-open class BaseFragment : Fragment() {
+abstract class BaseFragment : Fragment() {
 
     val TAG = "BaseFragment"
 
