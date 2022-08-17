@@ -20,11 +20,7 @@ abstract class MyBaseApplication() : Application(),
     Application.ActivityLifecycleCallbacks,
     LifecycleObserver {
     val appOpenId: String
-        get() = appOpen()
-
-    private fun appOpen(): String {
-        return getOpenId()
-    }
+        get() = getOpenId()
 
     abstract fun getOpenId(): String
 
