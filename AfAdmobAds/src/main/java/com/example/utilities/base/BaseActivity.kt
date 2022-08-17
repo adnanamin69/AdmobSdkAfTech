@@ -1,48 +1,36 @@
 package com.example.utilities.base
 
 import android.app.AlertDialog
-import android.content.ActivityNotFoundException
-import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.net.ConnectivityManager
-import android.net.NetworkInfo
 import android.net.Uri
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.RatingBar
 import android.widget.TextView
 import android.widget.Toast
-import androidx.annotation.NonNull
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import com.example.utilities.R
 import com.example.utilities.other_utils.extentions.ContextExtentions.loadInterstitial
 import com.example.utilities.other_utils.extentions.ViewsExtention.setOnOneClickListener
-import com.google.android.gms.ads.AdError
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.FullScreenContentCallback
-import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.interstitial.InterstitialAd
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.firebase.analytics.FirebaseAnalytics
-import java.util.*
-import java.util.concurrent.TimeUnit
 
 
 abstract class BaseActivity : AppCompatActivity() {
-    open val TAG = "BaseActivity"
     val interstitialId: String
         get() = getInterstitialId1()
     var mInterstitialAd: InterstitialAd? = null
     abstract fun getInterstitialId1(): String
-companion object {
-     var interstitialTimeElapsed = 0L
-}
+
+    companion object {
+        var interstitialTimeElapsed = 0L
+    }
+
     private var mFirebaseAnalytics: FirebaseAnalytics? = null
 
 
@@ -51,7 +39,6 @@ companion object {
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this)
         loadInterstitial()
 
-        Log.i(TAG, "onViewCreated from base: $this")
 
     }
 
@@ -107,9 +94,7 @@ companion object {
             return
         mFirebaseAnalytics?.logEvent(event, bundle)
 
-        mFirebaseAnalytics?.let {
-            Log.i(TAG, "postAnalytic: $event")
-        }
+        mFirebaseAnalytics?.let {}
     }
 
 
