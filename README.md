@@ -24,7 +24,7 @@ Add this to your module's `build.gradle` file (make sure the version matches the
 ```gradle
 dependencies {
 ....
-  implementation 'com.github.adnanamin69:AdmobSdkAfTech:0.5'
+  implementation 'com.github.adnanamin69:AdmobSdkAfTech:0.6'
 ....
 }
 ```
