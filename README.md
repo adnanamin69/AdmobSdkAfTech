@@ -174,7 +174,15 @@ call function `showFullAd{}` to show Interstitial
   setElapseTime(20);
  ```
  
+ ## Firebase Analytics
+ For posting simple firebase `Analytics` from `Activity`  Extend you activity  from `BaseActivity`  Class and `Fragment` from `BaseFragment` : 
  
+ call a fuction `postAnalytic("event")` and pass your `event`  in parameter
+
+```
+  postAnalytic("event);
+ ```
+
  ## Contributing
 
 Please fork this repository and contribute back using
