@@ -173,3 +173,18 @@ call function `showFullAd{}` to show Interstitial
 ```
   setElapseTime(20);
  ```
+ 
+ 
+ ## Contributing
+
+Please fork this repository and contribute back using
+[pull requests](https://github.com/adnanamin69/AdmobSdkAfTech/pulls).
+
+Any contributions, large or small, major features, bug fixes, are welcomed and appreciated
+but will be thoroughly reviewed .
+
+### Contact - Let's become friend
+- [Twitter](https://twitter.com/amin69_a)
+- [Github](https://github.com/adnanamin69)
+- [Linkedin](https://www.linkedin.com/in/adnanamin69/)
+- [Facebook](https://www.facebook.com/adnanamin69)
