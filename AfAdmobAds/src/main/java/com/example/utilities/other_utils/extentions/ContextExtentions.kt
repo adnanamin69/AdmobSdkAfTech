@@ -46,34 +46,7 @@ object ContextExtentions {
     }
 
 
-    fun Activity.showFullAd(callBack: () -> Unit) {
 
-
-        (this as BaseActivity).mInterstitialAd?.fullScreenContentCallback =
-            object : FullScreenContentCallback() {
-                override fun onAdDismissedFullScreenContent() {
-                    loadInterstitial()
-                    callBack()
-                }
-
-                override fun onAdImpression() {
-                    super.onAdImpression()
-                    interstitialTimeElapsed =
-                        Calendar.getInstance().timeInMillis
-                }
-
-                override fun onAdShowedFullScreenContent() {}
-                override fun onAdFailedToShowFullScreenContent(p0: AdError) {
-                    super.onAdFailedToShowFullScreenContent(p0)
-                    callBack()
-                }
-            }
-
-        if (mInterstitialAd != null && timeDifference(interstitialTimeElapsed) > elapseTime)
-            mInterstitialAd?.show(this)
-        else
-            callBack()
-    }
 
     fun timeDifference(millis: Long): Int {
         val current = Calendar.getInstance().timeInMillis

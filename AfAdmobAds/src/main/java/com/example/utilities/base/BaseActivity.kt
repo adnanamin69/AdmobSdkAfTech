@@ -15,10 +15,14 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import com.example.utilities.R
+import com.example.utilities.other_utils.extentions.ContextExtentions
 import com.example.utilities.other_utils.extentions.ContextExtentions.loadInterstitial
 import com.example.utilities.other_utils.extentions.ViewsExtention.setOnOneClickListener
+import com.google.android.gms.ads.AdError
+import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.firebase.analytics.FirebaseAnalytics
+import java.util.*
 
 
 abstract class BaseActivity : AppCompatActivity() {
@@ -100,69 +104,34 @@ abstract class BaseActivity : AppCompatActivity() {
         mFirebaseAnalytics?.let {}
     }
 
-
-    /*  fun isInternetAvailable(): Boolean {
-          val cm = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-          val activeNetwork: NetworkInfo? = cm.activeNetworkInfo
-
-          return activeNetwork?.isConnectedOrConnecting == true
-      }*/
-
-/*
-    open fun loadInterstitial() {
-
-
-        Log.i("mInterstitialAd", "called")
-        val adRequest: AdRequest = AdRequest.Builder().build()
-        InterstitialAd.load(this, interstitialId, adRequest,
-            object : InterstitialAdLoadCallback() {
-                override fun onAdLoaded(@NonNull interstitialAd: InterstitialAd) {
-                    mInterstitialAd = interstitialAd
-                    Log.i("mInterstitialAd", "onAdLoaded: add  loade")
-                }
-
-                override fun onAdFailedToLoad(error: LoadAdError) {
-                    mInterstitialAd = null
-                    Log.i("mInterstitialAd", "onAdLoaded: ${error.message}")
-                }
-            })
-    }
-
-
     fun showFullAd(callBack: () -> Unit) {
 
 
-        mInterstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
-            override fun onAdDismissedFullScreenContent() {
-                loadInterstitial()
-                callBack()
+        mInterstitialAd?.fullScreenContentCallback =
+            object : FullScreenContentCallback() {
+                override fun onAdDismissedFullScreenContent() {
+                    loadInterstitial()
+                    callBack()
+                }
+
+                override fun onAdImpression() {
+                    super.onAdImpression()
+                    interstitialTimeElapsed =
+                        Calendar.getInstance().timeInMillis
+                }
+
+                override fun onAdShowedFullScreenContent() {}
+                override fun onAdFailedToShowFullScreenContent(p0: AdError) {
+                    super.onAdFailedToShowFullScreenContent(p0)
+                    callBack()
+                }
             }
 
-            override fun onAdImpression() {
-                super.onAdImpression()
-                interstitialTimeElapsed =
-                    Calendar.getInstance().timeInMillis
-            }
-
-            override fun onAdShowedFullScreenContent() {}
-            override fun onAdFailedToShowFullScreenContent(p0: AdError) {
-                super.onAdFailedToShowFullScreenContent(p0)
-                callBack()
-            }
-        }
-
-        if (mInterstitialAd != null && timeDifference(interstitialTimeElapsed) > 15)
+        if (mInterstitialAd != null && ContextExtentions.timeDifference(interstitialTimeElapsed) > elapseTime)
             mInterstitialAd?.show(this)
         else
             callBack()
     }
-
-    private fun timeDifference(millis: Long): Int {
-        val current = Calendar.getInstance().timeInMillis
-        val elapsedTime = current - millis
-
-        return TimeUnit.MILLISECONDS.toSeconds(elapsedTime).toInt()
-    }*/
 
 
     fun showToastShort(msg: String) {
