@@ -25,6 +25,9 @@ abstract class BaseActivity : AppCompatActivity() {
     val interstitialId: String
         get() = getInterstitialId1()
     var mInterstitialAd: InterstitialAd? = null
+    var elapseTime: Int = 15
+
+
     abstract fun getInterstitialId1(): String
 
     companion object {

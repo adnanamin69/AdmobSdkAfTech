@@ -69,7 +69,7 @@ object ContextExtentions {
                 }
             }
 
-        if (mInterstitialAd != null && timeDifference(interstitialTimeElapsed) > 15)
+        if (mInterstitialAd != null && timeDifference(interstitialTimeElapsed) > elapseTime)
             mInterstitialAd?.show(this)
         else
             callBack()
