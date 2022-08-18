@@ -112,6 +112,7 @@ abstract class BaseActivity : AppCompatActivity() {
                 override fun onAdDismissedFullScreenContent() {
                     loadInterstitial()
                     callBack()
+                    (applicationContext as MyBaseApplication).isInterstitialAdShowing = false
                 }
 
                 override fun onAdImpression() {
@@ -120,7 +121,10 @@ abstract class BaseActivity : AppCompatActivity() {
                         Calendar.getInstance().timeInMillis
                 }
 
-                override fun onAdShowedFullScreenContent() {}
+                override fun onAdShowedFullScreenContent() {
+                    (applicationContext as MyBaseApplication).isInterstitialAdShowing = true
+                }
+
                 override fun onAdFailedToShowFullScreenContent(p0: AdError) {
                     super.onAdFailedToShowFullScreenContent(p0)
                     callBack()

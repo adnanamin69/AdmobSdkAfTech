@@ -2,7 +2,6 @@ package com.screenrecorder.recording.software.screenshot.admobsdkaftech
 
 import android.os.Bundle
 import com.example.utilities.base.BaseActivity
-import com.example.utilities.other_utils.extentions.ContextExtentions.showFullAd
 
 class MainActivity : BaseActivity() {
     override fun getInterstitialId1(): String {

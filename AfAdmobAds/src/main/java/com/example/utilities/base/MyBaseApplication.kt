@@ -18,7 +18,11 @@ import com.google.firebase.FirebaseApp
 
 abstract class MyBaseApplication() : Application(),
     Application.ActivityLifecycleCallbacks,
+
     LifecycleObserver {
+
+    var isInterstitialAdShowing = false
+
     val appOpenId: String
         get() = getOpenId()
 
@@ -69,7 +73,8 @@ abstract class MyBaseApplication() : Application(),
             //your code here
             currentActivity?.let {
                 //  Toast.makeText(this, "show ad", Toast.LENGTH_SHORT).show()
-                showAdIfAvailable(it)
+                if (!isInterstitialAdShowing)
+                    showAdIfAvailable(it)
                 Log.d("AppOpenAd", "onMoveToForeground: ")
             }
         }
