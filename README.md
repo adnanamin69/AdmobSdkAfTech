@@ -11,8 +11,9 @@ Add this in your root `build.gradle` file (**not** your module `build.gradle` fi
 ```gradle
 allprojects {
 	repositories {
-		...
+		....
 		maven { url "https://jitpack.io" }
+		....
 	}
 }
 ```
@@ -20,6 +21,7 @@ allprojects {
 ## Dependency
 
 Add this to your module's `build.gradle` file (make sure the version matches the JitPack badge above):
+
 
 ```gradle
 dependencies {
@@ -31,7 +33,7 @@ dependencies {
 
 ##  Manifest 
 Add admob app id in your `Manifest` file :
-```
+```manifest 
    <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="@string/admob_app_id" />
@@ -50,7 +52,7 @@ override a method `getOpenId()` and return App open Id
 
 
 ### Kotlin
-```
+```kotlin 
    class MyApp : MyBaseApplication() {
 
     override fun getOpenId(): String {
@@ -66,7 +68,7 @@ override a method `getOpenId()` and return App open Id
 
 ### Java
 
-```
+```java
 public class MyAppLication extends MyBaseApplication {
     @NonNull
     @Override
@@ -93,7 +95,7 @@ default elapse time is 15 sconds
 call function `showFullAd{}` to show Interstitial
 
 ### Kotlin
-```
+```kotlin
   class MainActivity : BaseActivity() {
     override fun getInterstitialId1(): String {
         return getString(R.string.app_interstitial_id)
@@ -117,7 +119,7 @@ call function `showFullAd{}` to show Interstitial
 }
 ```
 #### show full ad 
-```
+```kotlin
  showFullAd {
 	//do your futher work 
         //this block will execute on add dissmiss , ad is null or fail to load add
@@ -125,12 +127,12 @@ call function `showFullAd{}` to show Interstitial
         }
 ```
 #### chage elapse time 
-```
+```diff
  elapseTime = 20 
  ```
 
 ### Java
-```
+```java
   public class JavaActivity extends BaseActivity {
 
     @Override
@@ -158,7 +160,7 @@ call function `showFullAd{}` to show Interstitial
 }
 ```
 #### show full ad 
-```
+```java
   showFullAd(new Function0<Unit>() {
             @Override
             public Unit invoke() {
@@ -170,7 +172,7 @@ call function `showFullAd{}` to show Interstitial
         });
 ```
 #### chage elapse time 
-```
+```diff
   setElapseTime(20);
  ```
  
@@ -179,7 +181,7 @@ call function `showFullAd{}` to show Interstitial
  
  call a fuction `postAnalytic("event")` and pass your `event`  in parameter
 
-```
+```diff
   postAnalytic("event);
  ```
 
