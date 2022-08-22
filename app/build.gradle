@@ -25,6 +25,7 @@ android {
             resValue 'string', 'ad_mob_native_id', 'ca-app-pub-3940256099942544/1044960115'
             resValue 'string', 'app_open_id', 'ca-app-pub-3940256099942544/1033173712'
             resValue 'string', 'app_interstitial_id', 'ca-app-pub-3940256099942544/1033173712'
+            resValue 'string', 'admob_bqnner', 'ca-app-pub-3940256099942544/6300978111'
 
         }
         debug {
@@ -34,7 +35,7 @@ android {
             resValue 'string', 'ad_mob_native_id', 'ca-app-pub-3940256099942544/1044960115'
             resValue 'string', 'app_open_id', 'ca-app-pub-3940256099942544/1033173712'
             resValue 'string', 'app_interstitial_id', 'ca-app-pub-3940256099942544/1033173712'
-
+            resValue 'string', 'admob_bqnner', 'ca-app-pub-3940256099942544/6300978111'
         }
     }
     compileOptions {

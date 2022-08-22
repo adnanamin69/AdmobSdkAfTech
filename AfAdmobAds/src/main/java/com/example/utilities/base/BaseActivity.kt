@@ -9,17 +9,20 @@ import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.FrameLayout
 import android.widget.RatingBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import androidx.core.view.size
 import com.example.utilities.R
+import com.example.utilities.other_utils.BannerSize
 import com.example.utilities.other_utils.extentions.ContextExtentions
 import com.example.utilities.other_utils.extentions.ContextExtentions.loadInterstitial
 import com.example.utilities.other_utils.extentions.ViewsExtention.setOnOneClickListener
-import com.google.android.gms.ads.AdError
-import com.google.android.gms.ads.FullScreenContentCallback
+import com.google.android.gms.ads.*
+import com.google.android.gms.ads.AdSize.BANNER
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.firebase.analytics.FirebaseAnalytics
 import java.util.*
@@ -30,7 +33,7 @@ abstract class BaseActivity : AppCompatActivity() {
         get() = getInterstitialId1()
     var mInterstitialAd: InterstitialAd? = null
     var elapseTime: Int = 15
-
+    var adView: AdView? = null
 
     abstract fun getInterstitialId1(): String
 
@@ -137,6 +140,14 @@ abstract class BaseActivity : AppCompatActivity() {
             callBack()
     }
 
+    fun loadBanner(id: String, frameLayout: FrameLayout, ad: BannerSize) {
+        adView = AdView(this)
+        adView?.setAdSize(ad.size)
+        adView?.adUnitId = id
+        val adRequest = AdRequest.Builder().build()
+        adView?.loadAd(adRequest)
+        frameLayout.addView(adView)
+    }
 
     fun showToastShort(msg: String) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
@@ -145,4 +156,22 @@ abstract class BaseActivity : AppCompatActivity() {
     fun showToastLong(msg: String?) {
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
     }
+
+    public override fun onPause() {
+        adView?.pause()
+        super.onPause()
+    }
+
+    // Called when returning to the activity
+    public override fun onResume() {
+        super.onResume()
+        adView?.resume()
+    }
+
+    // Called before the activity is destroyed
+    public override fun onDestroy() {
+        adView?.destroy()
+        super.onDestroy()
+    }
+
 }
