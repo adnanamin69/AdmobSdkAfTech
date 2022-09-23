@@ -90,7 +90,7 @@ abstract class BaseFragment : Fragment() {
         }
     }
 
-    fun showRationalDialog() {
+    private fun showRationalDialog() {
 
         val mBuilder = context?.let { AlertDialog.Builder(it) }
 

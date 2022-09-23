@@ -3,7 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Adnan.9687377/Desktop/AdmobSdkAfTech/AfAdmobAds/src/main/res/drawable/btn_dialog_bg.xml" value="0.1105" />
+        <entry key="..\:/Users/Adnan.9687377/Desktop/AdmobSdkAfTech/AfAdmobAds/src/main/res/drawable/round_corners_2dp.xml" value="0.1105" />
+        <entry key="..\:/Users/Adnan.9687377/Desktop/AdmobSdkAfTech/AfAdmobAds/src/main/res/layout/admob_banner_native.xml" value="0.20260416666666667" />
+        <entry key="..\:/Users/Adnan.9687377/Desktop/AdmobSdkAfTech/AfAdmobAds/src/main/res/layout/admob_medium_native.xml" value="0.20260416666666667" />
+        <entry key="..\:/Users/Adnan.9687377/Desktop/AdmobSdkAfTech/AfAdmobAds/src/main/res/layout/admob_orignal_native.xml" value="0.20260416666666667" />
+        <entry key="..\:/Users/Adnan.9687377/Desktop/AdmobSdkAfTech/AfAdmobAds/src/main/res/layout/admob_small_native.xml" value="0.20260416666666667" />
+        <entry key="..\:/Users/Adnan.9687377/Desktop/AdmobSdkAfTech/AfAdmobAds/src/main/res/layout/native_ad_main.xml" value="0.20260416666666667" />
         <entry key="..\:/Users/Adnan.9687377/Desktop/AdmobSdkAfTech/app/src/main/res/layout/activity_main.xml" value="0.1328125" />
+        <entry key="..\:/Users/Adnan.9687377/Desktop/AdmobSdkAfTech/app/src/main/res/layout/admob_banner_native.xml" value="0.13802083333333334" />
       </map>
     </option>
   </component>
