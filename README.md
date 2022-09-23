@@ -176,6 +176,39 @@ call function `showFullAd{}` to show Interstitial
   setElapseTime(20);
  ```
  
+ ##  NAtive Ad
+For NAtive Ads create an Instance of  `LoadNativeAd`  Class : 
+
+pass three parameters in constructor `activity`  container for ad `FrameLayout`  and `Size Enum` with the parameter of ad Id 
+
+#### Small Size ad
+```kotlin
+ LoadNativeAd(
+            this,
+            binding.adContainerSmall,
+            NativeSize.Small(getString(R.string.admob_native))
+        )
+```
+ 
+ #### Mdium Size ad
+```kotlin
+   LoadNativeAd(
+            this,
+            binding.adContainerMedium,
+            NativeSize.Medium(getString(R.string.admob_native))
+        )
+```
+ 
+  #### Large Size ad
+```kotlin
+  LoadNativeAd(
+            this,
+            binding.adContainerLarge,
+            NativeSize.Large(getString(R.string.admob_native))
+        )
+```
+ 
+ 
  ## Firebase Analytics
  For posting simple firebase `Analytics` from `Activity`  Extend you activity  from `BaseActivity`  Class and `Fragment` from `BaseFragment` : 
  
