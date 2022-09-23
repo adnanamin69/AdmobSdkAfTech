@@ -20,7 +20,7 @@ public class JavaActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setElapseTime(20);
-        FrameLayout fl = findViewById(R.id.ad_container);
+        FrameLayout fl = findViewById(R.id.ad_container_small);
         loadBanner(getString(R.string.admob_bqnner), fl, BannerSize.LARGE);
     }
 

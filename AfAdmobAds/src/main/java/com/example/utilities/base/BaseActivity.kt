@@ -109,7 +109,6 @@ abstract class BaseActivity : AppCompatActivity() {
 
     fun showFullAd(callBack: () -> Unit) {
 
-
         mInterstitialAd?.fullScreenContentCallback =
             object : FullScreenContentCallback() {
                 override fun onAdDismissedFullScreenContent() {
@@ -140,7 +139,7 @@ abstract class BaseActivity : AppCompatActivity() {
             callBack()
     }
 
-    fun loadBanner(id: String, frameLayout: FrameLayout, ad: BannerSize) {
+    fun loadBanner(id: String, frameLayout: FrameLayout, ad: BannerSize = BannerSize.SMALL) {
         adView = AdView(this)
         adView?.setAdSize(ad.size)
         adView?.adUnitId = id

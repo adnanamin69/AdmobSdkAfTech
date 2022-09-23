@@ -6,5 +6,11 @@
     <color name="secondary">#4083DB</color>
     <color name="accent">#2D6CE5</color>
     <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+
+    <color name="ad_background">#12366EFF</color>
+    <color name="grey_500">#6D6D6D</color>
+    <color name="ad_attr_background">#6B6B6B</color>
 
 </resources>
