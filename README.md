@@ -176,10 +176,14 @@ call function `showFullAd{}` to show Interstitial
   setElapseTime(20);
  ```
  
- ##  NAtive Ad
-For NAtive Ads create an Instance of  `LoadNativeAd`  Class : 
+ ##  Native Ad
+For Native Ads create an Instance of  `LoadNativeAd`  Class : 
 
-pass three parameters in constructor `activity`  container for ad `FrameLayout`  and `Size Enum` with the parameter of ad Id 
+Pass three parameters in constructor `activity`  container for ad `FrameLayout`  and `Size Enum` with the parameter of ad Id 
+
+For Cstom layout create a layout with a parent class of `ConstraintLayout` with the folowing Ids 
+
+### Kotlin
 
 #### Small Size ad
 ```kotlin
