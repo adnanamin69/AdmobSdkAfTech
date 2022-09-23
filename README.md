@@ -183,6 +183,15 @@ Pass three parameters in constructor `activity`  container for ad `FrameLayout` 
 
 For Cstom layout create a layout with a parent class of `ConstraintLayout` with the folowing Ids 
 
+* `ad_media` for MediaView
+* `native_icon_view` for small icon 
+* `native_ad_title` for title
+* `ad_attribute` for AD 
+* `native_ad_social_context` for small desc 
+* `native_ad_call_to_action` for action button
+* `ad_stars` for RatingBar
+* `ad_advertiser`
+
 ### Kotlin
 
 #### Small Size ad
