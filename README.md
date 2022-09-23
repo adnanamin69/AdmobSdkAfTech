@@ -181,7 +181,7 @@ For Native Ads create an Instance of  `LoadNativeAd`  Class :
 
 Pass three parameters in constructor `activity`  container for ad `FrameLayout`  and `Size Enum` with the parameter of ad Id 
 
-For Cstom layout create a layout with a parent class of `ConstraintLayout` with the folowing Ids 
+For Custom layout create a layout with a parent class of `ConstraintLayout` with the folowing Ids 
 
 * `ad_media` for MediaView
 * `native_icon_view` for small icon 
@@ -220,7 +220,16 @@ For Cstom layout create a layout with a parent class of `ConstraintLayout` with 
             NativeSize.Large(getString(R.string.admob_native))
         )
 ```
- 
+
+   #### Custom Layout ad
+```kotlin
+  LoadNativeAd(
+            this,
+            binding.adContainerCustom,
+            NativeSize.Custom(R.layout.admob_banner_native, getString(R.string.admob_native))
+        )
+
+```
  
  ## Firebase Analytics
  For posting simple firebase `Analytics` from `Activity`  Extend you activity  from `BaseActivity`  Class and `Fragment` from `BaseFragment` : 
